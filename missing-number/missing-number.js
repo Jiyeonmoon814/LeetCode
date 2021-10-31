@@ -2,14 +2,13 @@
  * @param {number[]} nums
  * @return {number}
  */
-
 var missingNumber = function(nums) {
-    const sortNums = nums.sort((a,b) => a-b)
+    let numsLength = nums.length 
     
-    for(i=0;i<=nums.length;i++){
-        if(nums[i] !== i){
-            return i
-        }
-    }
+    const sumShouldBe = numsLength * (numsLength + 1) / 2 
+    
+    const currentSum = nums.reduce((a,b) => a+b,0)
+    
+    return sumShouldBe - currentSum
     
 };
